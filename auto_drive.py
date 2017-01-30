@@ -112,26 +112,6 @@ def run():
         LEFT_MOTOR.duty_cycle_sp = left_speed
         RIGHT_MOTOR.duty_cycle_sp = right_speed
 
-    # def updateDrive():
-    #     results_left_ratio = (scan_results[2] / scan_results[0]) if scan_results[0] != 0 else 1
-    #     results_right_ratio = (scan_results[0] / scan_results[2]) if scan_results[2] != 0 else 1
-    #     integrals_left_ratio = scan_integrals[2] / scan_integrals[0] if scan_integrals[0] != 0 else results_left_ratio
-    #     integrals_right_ratio = scan_integrals[0] / scan_integrals[2] if scan_integrals[2] != 0 else results_right_ratio
-    #
-    #     speed_mul = (scan_results[1] + MAX_DISTANCE / 2) / MAX_DISTANCE
-    #     left_speed = (2 * results_left_ratio + integrals_left_ratio) / 3 * speed_mul * 100
-    #     right_speed = (2 * results_right_ratio + integrals_right_ratio) / 3 * speed_mul * 100
-    #
-    #     slow_speed_mul = (scan_results[1] / MAX_DISTANCE) * 3 - 1
-    #     if scan_results[2] > scan_results[0]:
-    #         right_speed *= slow_speed_mul
-    #     else:
-    #         left_speed *= slow_speed_mul
-    #
-    #     LEFT_MOTOR.duty_cycle_sp = min(max(left_speed, -100), 100) / 4
-    #     RIGHT_MOTOR.duty_cycle_sp = min(max(right_speed, -100), 100) / 4
-    #     print(str(scan_results), str(scan_integrals), left_speed, right_speed, LEFT_MOTOR.duty_cycle_sp, RIGHT_MOTOR.duty_cycle_sp)
-
     try:
         rotateScanner(90)
         while 'running' in SCANNER_MOTOR.state:
